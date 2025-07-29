@@ -1,64 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Highlights & Happenings</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      font-size: 12pt;
-      line-height: 1.5;
-      padding: 20px;
-      background-color: #ffffff;
-      color: #000000;
-      text-align: center;
-    }
-    h1 {
-      font-size: 16pt;
-      margin-bottom: 20px;
-    }
-    button {
-      font-size: 14pt;
-      padding: 10px 20px;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-  </style>
   <script>
-    let currentView = null;
-
-    function routeBasedOnScreenSize() {
-      const isSmall = window.innerWidth <= 768;
-
-      if (isSmall && currentView !== 'html') {
-        currentView = 'html';
-        window.location.href = "arb_article_html.html";
-      } else if (!isSmall && currentView !== 'flipbook') {
-        currentView = 'flipbook';
-        const button = document.getElementById('flipbook-button');
-        if (button) {
-          button.style.display = 'inline-block';
-        }
-      }
-    }
-
     window.onload = function () {
-      routeBasedOnScreenSize();
-
-      const flipbookButton = document.getElementById('flipbook-button');
-      if (flipbookButton) {
-        flipbookButton.onclick = function () {
-          window.location.href = "https://heyzine.com/flip-book/5f260350d0.html";
-        };
+      const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth <= 800) {
+        window.location.href = "arb_article_html.html";
+      } else {
+        window.location.href = "https://online.fliphtml5.com/wsgvk/jvne/";
       }
-
-      window.addEventListener('resize', routeBasedOnScreenSize);
     };
   </script>
 </head>
 <body>
-  <h1>Click below to read Highlights & Happenings</h1>
-  <button id="flipbook-button" style="display:none;">View Flipbook</button>
+  <p>If you are not redirected automatically, <a href="arb_article_html.html">click here</a> for the small screen version or <a href="https://online.fliphtml5.com/wsgvk/jvne/">click here</a> for the large screen version.</p>
 </body>
 </html>
