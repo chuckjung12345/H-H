@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H&H Article Display</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const screenWidth = window.innerWidth;
+      const isSmallScreen = screenWidth < 768;
+
+      const target = isSmallScreen
+        ? 'arb_article_html.html'
+        : 'https://heyzine.com/flip-book/5f260350d0.html';
+
+      window.location.replace(target);
+    };
+  </script>
+</head>
+<body>
+  <!-- This fallback content will only briefly appear before redirection -->
+  <p>Loading H&H content...</p>
+</body>
+</html>
