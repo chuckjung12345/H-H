@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highlights & Happenings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      color: #163F82;
+      font-size: 24pt;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      if (window.innerWidth <= 768) {
+        // Small screen – open mobile HTML
+        window.location.href = "ARB.html";
+      } else {
+        // Large screen – open flipbook
+        window.location.href = "Flipbook.png";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Loading Highlights & Happenings...</h1>
+</body>
+</html>
