@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Reserve Menu</title>
+  <script>
+    window.onload = function () {
+      const isSmallScreen = window.innerWidth < 768;
+      const target = isSmallScreen ? "Menu_Text.html" : "Reserve_Menu_Large.png";
+      window.location.replace(target);
+    };
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <p>Loading the best version of the menu for your device...</p>
+</body>
+</html>
