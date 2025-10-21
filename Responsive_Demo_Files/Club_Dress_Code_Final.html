@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Club Dress Code — Framed</title>
+
+  <!-- (Optional) Original head content from your file: -->
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Club Dress Code — Highlights & Happenings</title>
+<style>
+  :root{
+    --navy:#0a2342;              /* banner background */
+    --body-blue:#1a4b8e;         /* dark blue body text */
+    --light:#e9f2fb;             /* very light blue page background */
+    --bg:#e9f2fb;
+  }
+  html{color-scheme:light}
+  body{
+    margin:0;background:var(--bg);color:var(--body-blue);
+    font-family:Georgia, "Times New Roman", serif;
+    line-height: 1.2;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  /* Banner */
+  header{
+    background:var(--navy); color:#fff; text-align:center;
+    padding:18px 12px;
+    /* script-style stack with fallbacks */
+    font-family:"Brush Script MT","Segoe Script","Lucida Handwriting","Snell Roundhand","Apple Chancery",cursive;
+    font-weight:500;
+    font-size:clamp(2rem,5.5vw,3rem);
+    letter-spacing:.5px;
+  }
+  main{max-width:800px;margin:28px auto 80px;padding:0 16px}
+  h1{display:none} /* title is conveyed via banner */
+  h2{margin:18px 0 8px;font-weight:700;color:var(--body-blue);font-size:1.05rem;font-style:italic}
+  p{margin:0 0 12px; font-style:italic;}
+  ul{margin:0 0 14px 1.1rem; color:var(--body-blue);}
+  li{margin:0 0 8px; font-style:italic;}
+  em{font-style:italic}
+  .footer-note{margin-top:18px;font-style:italic}
+  /* First paragraph centered per feedback */
+  .lead{ text-align:center; }
+
+  .hero-wide{ background:#0a2342; color:#fff; width:100%; text-align:center; padding:12px 0; }
+  .hero-title{ margin:0; font-family:"Brush Script MT","Segoe Script","Lucida Handwriting","Snell Roundhand","Apple Chancery",cursive; font-weight:500; font-size:clamp(2rem,5vw,3.25rem); letter-spacing:.3px; }
+  .article-body > main > h1#title{ display:none; }
+  h2{ text-align:center; font-style:normal; }
+  .lead, .footer-note, .article-body p[style*="font-style:italic"]{ color:#003a70 !important; }
+
+  .article-body em{ color:#003a70 !important; }
+
+  h2, h3{ text-align:center; font-style:normal; }
+
+  .ms-banner {
+    background: #003a70;  /* Mariner Sands blue */
+    color: #ffffff;
+    text-align: center;
+    font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", "Snell Roundhand", "Apple Chancery", cursive;
+    font-weight: 500;
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    letter-spacing: .5px;
+    padding: 18px 12px;
+    margin: 0 -var(--pad) 20px;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+</style>
+
+  <!-- Framing styles (edging + shadow + banner) -->
+  <style>
+    :root{
+      --ms-blue:#003a70;   /* Banner blue */
+      --ink:#111;          /* Text color */
+      --paper:#ffffff;     /* Card background */
+      --page:#f3f4f6;      /* Page background */
+      --radius:18px;
+      --pad:clamp(14px,1.6vw,22px);
+      --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 28px rgba(0,0,0,.12);
+      --border: 1px solid rgba(0,0,0,.12);
+      --card-max: 880px;
+      --font-body: system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+    }
+    html{ color-scheme: light only; }
+    body{
+      margin:0; background:var(--page); color:var(--ink);
+      font-family:var(--font-body);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      display:grid; place-items:start center; padding:32px 12px 64px;
+    }
+    .article-card{
+      width:min(100%, var(--card-max));
+      background:var(--paper);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:var(--border);
+      overflow:hidden;
+    }
+    .top-banner{
+      background:var(--ms-blue); color:#fff; text-align:center;
+      padding:12px 16px; font-family:'Georgia', serif; font-weight:600;
+      letter-spacing:.3px; text-transform:uppercase;
+    }
+    .article-body{ padding: var(--pad); }
+
+    /* Provide a basic two-column layout if original CSS isn't present */
+    .mcg-style-twocolumn{ display:grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .mcg-style-twocolumn .column{ min-width:0; }
+    @media (max-width: 800px){
+      .mcg-style-twocolumn{ grid-template-columns: 1fr; }
+    }
+  
+  .hero-wide{ background:#0a2342; color:#fff; width:100%; text-align:center; padding:12px 0; }
+  .hero-title{ margin:0; font-family:"Brush Script MT","Segoe Script","Lucida Handwriting","Snell Roundhand","Apple Chancery",cursive; font-weight:500; font-size:clamp(2rem,5vw,3.25rem); letter-spacing:.3px; }
+  .article-body > main > h1#title{ display:none; }
+  h2{ text-align:center; font-style:normal; }
+  .lead, .footer-note, .article-body p[style*="font-style:italic"]{ color:#003a70 !important; }
+
+  .article-body em{ color:#003a70 !important; }
+</style>
+</head>
+<body>
+  <article class="article-card" aria-label="Club Dress Code">
+    <header class="ms-banner">Club Dress Code</header>
+    <section class="article-body">
+      <main aria-labelledby="title">
+        <h1 id="title">Club Dress Code</h1>
+    <p class="lead">Our attire standards benefit everyone because clothing can elevate or diminish the experience of the room. Our staff takes pride in their appearance and appreciate you respecting our guidelines.</p>
+
+    <h2>Sand Bar</h2>
+    <ul>
+      <li>Shirts/cover-ups and proper footwear must be worn at both the interior and exterior dining areas and bars.</li>
+      <li>Tee shirts must be in good condition and not have inappropriate print on them.</li>
+      <li>Denim of any color must be appropriately appointed and free of frayed ends, holes, tears, and patches or fading. Hats are permitted inside the dining area.</li>
+    </ul>
+
+    <h2>Clubhouse Dining &amp; Common Areas (before 5:30pm)</h2>
+    <ul>
+      <li>Blue jeans, denim shorts, skirts, or jackets are not permitted.</li>
+      <li>Clothing with frayed ends, holes, tears, patches, and fading are not permitted.</li>
+      <li>All other denim colors in pristine condition are permitted.</li>
+      <li>Appropriate golf and tennis attire is acceptable.</li>
+      <li>Blue denim, tank tops, tee shirts, swimwear, cover-ups, and cut- off shorts are not appropriate wear in the clubhouse or on the patio. Gentlemen, please remove your hats when entering the clubhouse.</li>
+    </ul>
+
+    <h2>Clubhouse Dining &amp; Common Areas (after 5:30pm)</h2>
+    <ul>
+      <li>The Country Club Casual dress code permits long pants or dress “Bermuda” shorts, collared shirts, and appropriate footwear for men.</li>
+      <li>Shorts must be no more than 4 inches above the knee and shirttails must be tucked in except if the shirt is designed to be untucked.</li>
+      <li>“Crocs”, flip-flops, beach shoes, basketball shoes, and all-terrain shoes are not considered appropriate footwear.</li>
+      <li>NOTE: Country Club Casual is also the dress code for Sunday brunch.</li>
+    </ul>
+
+    <h2>The Reserve &amp; Sunday Brunch</h2>
+    <ul>
+      <li>The Country Club dress code permits long pants, collared shirts, “Bermuda” shorts and appropriate footwear for men. Jackets are always welcome.</li>
+      <li>Shorts must be no more than 4 inches above the knee and shirt tails must be tucked in.</li>
+      <li>“Crocs”, flip-flops, beach shoes, basketball shoes, and all-terrain shoes are not considered appropriate footwear.</li>
+    </ul>
+
+    <p class="footer-note">If the dress code is modified for a special event, details will be included in the event invitation.</p>
+
+    <p style="font-style:italic;">Thank you for your cooperation.</p>
+  </main>
+    </section>
+  </article>
+</body>
+</html>
