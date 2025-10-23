@@ -47,14 +47,25 @@ header.banner {
   background: linear-gradient(#fff, #fafbfc);
   border-bottom: 1px solid var(--rule);
 }
+/* Desktop & tablet — keep your original large size */
 header.banner h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 5vw, 54px);
+  font-size: clamp(36px, 5vw, 54px);  /* same desktop feel as before */
   line-height: 1.05;
   letter-spacing: 0.5px;
   color: var(--accent);
   margin: 0;
+  white-space: nowrap;                  /* never wrap */
 }
+
+/* Phone-only: force a smaller cap so it stays on one line */
+@media (max-width: 480px) {
+  header.banner h1 {
+    font-size: 24px;       /* bump to 26–28px if it still fits */
+    letter-spacing: 0;     /* tighter tracking helps fit */
+  }
+}
+
 header.banner .subtitle {
   color: var(--muted);
   margin: 10px 0 0;
@@ -218,6 +229,23 @@ header.banner .subtitle {
 
 .card--tab .tab { color: #0b3d91; }
 
+/* Small screens: replace text banner with the H&H.png image */
+@media (max-width: 480px){
+  header.banner h1,
+  header.banner .subtitle { display: none; }
+
+  header.banner::after{
+    content: "";
+    display: block;
+    width: 100%;
+    max-width: 480px;          /* keep it neat on tiny phones */
+    margin: 0 auto;
+    aspect-ratio: 5 / 1;       /* adjust if your image is taller/shorter */
+    background: url('H%26H.png') center / contain no-repeat;
+    /* If possible, rename the file to HH.png and use:
+       background: url('HH.png') center / contain no-repeat; */
+  }
+}
 
 </style>
 
@@ -236,7 +264,7 @@ header.banner .subtitle {
     <!-- Pattern A: Card containment (most polished, best for lead/feature pieces) -->
     <article class="article rule card--tab" aria-label="Board of Governors">
       <div class="tab">BOARD OF GOVERNORS</div>
-      <h2 class="headline headline--center">Mariner Sands rebounds quickly from October’s tornado — no casualties</h2>
+      <h2 class="headline headline--center">Mariner Sands rebounds quickly from last October’s tornado — no casualties</h2>
       
       <details class="accordion" style="margin:10px 0 0 24px;">
         <summary><span class="chev" aria-hidden="true">▸</span> <span class="kicker">Key facts</span></summary>
@@ -246,9 +274,9 @@ header.banner .subtitle {
         <li><strong>Good news:</strong> No casualties</li>
       </ul>
       </details>
-      <p class="summary" style="margin:12px 0 0 24px;">Thank you to first responders, staff, member volunteers, and partner charities for the swift, coordinated response.</p>
+      <p class="summary" style="margin:12px 0 0 24px;">Thank you to first responders, staff, member volunteers, and partner charities for their swift, coordinated response.</p>
       <div style="margin:12px 0 0 24px;"><a class="cta-btn" href="./BOG_Tornado_final.html" role="button">
-  View BOG Tornado Update →
+  View BOG Update →
 </a>
 </div>
     </article>
@@ -275,7 +303,7 @@ header.banner .subtitle {
         </figure>
         <div class="box-text">
           <h2 class="box-title">Citrus Sage Spritz — this week’s cocktail</h2>
-          <a class="cta-btn" href="Drink.html" role="button">View Recipe →</a>
+          <a class="cta-btn" href="Drink.html" role="button">View Ad →</a>
         </div>
       </div>
     </article>
@@ -300,7 +328,7 @@ header.banner .subtitle {
           <img src="Dress_Rules.png" alt="Club Dress Code" />
         </figure>
         <div class="box-text">
-          <h2 class="box-title">Club Dress Code — quick guide, phone‑friendly</h2>
+          <h2 class="box-title">Club Dress Code — quick guide, now phone‑friendly</h2>
           <a class="cta-btn" href="Club_Dress_Code_Final.html" role="button">Read the Dress Code →</a>
         </div>
       </div>
@@ -314,5 +342,40 @@ header.banner .subtitle {
 
     
   </main>
+<style>
+  /* Keep landing title on one line and progressively shrink on small phones */
+  @media (max-width: 480px) {
+    #hh-title {
+      white-space: nowrap;           /* never wrap */
+      line-height: 1.1;
+      font-size: clamp(16px, 5.8vw, 22px);
+    }
+  }
+  @media (max-width: 380px) {
+    #hh-title { font-size: 5.2vw; }  /* shrink more on very small screens */
+  }
+  @media (max-width: 340px) {
+    #hh-title { font-size: 4.8vw; }  /* and a bit more if needed */
+  }
+/* Phone-only: keep H&H on one line and shrink progressively */
+@media (max-width: 480px) {
+  header.banner h1 {
+    white-space: nowrap;       /* never wrap */
+    line-height: 1.1;
+    letter-spacing: 0;
+    font-size: clamp(18px, 5.2vw, 24px);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  header.banner h1 { font-size: 4.8vw; }
+}
+@media (max-width: 340px) {
+  header.banner h1 { font-size: 4.4vw; }
+}
+
+</style>
+
 </body>
 </html>
