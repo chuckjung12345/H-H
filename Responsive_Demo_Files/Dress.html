@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Club Dress Code</title>
+  <style>
+    :root{
+      --ms-blue:#003a70;
+      --ink:#111827;
+      --muted:#5b6773;
+      --rule:#e6e8eb;
+      --page-max:1000px;
+      --text-max:66ch;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:"Aptos",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.2;
+      font-size:clamp(16px,1.2vw + .5rem,18px);
+      background:#fff;
+    }
+    .banner{background:transparent;color:#fff;width:100%;border-bottom:0;}
+    .banner-inner{
+      max-width:calc(var(--text-max) + 36px);
+      margin:0 auto .75em auto; /* match standard paragraph spacing */
+      background:var(--ms-blue);
+      color:#fff;
+      padding:9px 18px;
+      text-align:center;
+      border-bottom:2px solid rgba(0,0,0,.08);
+    }
+    .banner h1{
+      margin:0;
+      font-family:"Brush Script MT", cursive, Georgia, "Times New Roman", serif;
+      font-size:clamp(18px,2vw + .3rem,28px);
+      letter-spacing:.2px;
+      font-weight:500;
+    }
+    .page{max-width:var(--page-max);margin:0 auto;padding:24px 18px 56px;}
+    .content{max-width:var(--text-max);margin:0 auto;}
+    /* avoid double-spacing after banner */
+    .content > :first-child{margin-top:0;}
+    p{margin:.75em 0;}
+    i{font-style:italic;display:block;margin:.75em 0;}
+    /* Italic bullet lists */
+    ul.ital{margin:.5em 0 1em 1.2em; padding:0;}
+    ul.ital li { font-style: normal; margin:.3em 0;}
+    /* Subheaders */
+    h3.subheader{
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:700;
+      font-style:normal;
+      font-size:clamp(16px, 1.2vw + .28rem, 20px); /* reduced to prevent wrapping */
+      line-height:1.25;
+      margin-top:1em;
+      margin-bottom:.4em;
+      color:#0f2240;
+    }
+      /* Mobile override: use standard serif banner text on phones */
+    @media (max-width:480px){
+      .banner h1{
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight:700;
+        font-size: clamp(18px, 6vw, 24px);
+        letter-spacing:.2px;
+        text-transform:uppercase;
+      }
+    }
+    }
+  </style>
+
+<style id="hal-mobile-spacing">
+  /* Tighten banner→text spacing on phones only */
+  @media (max-width: 480px){
+    .banner-inner { margin: 0 auto .5em auto !important; } /* was .75em */
+  }
+</style>
+</head>
+<body>
+  <header class="banner" role="banner">
+    <div class="banner-inner">
+      <h1>Club Dress Code</h1>
+    </div>
+  </header>
+  <main class="page" id="main" role="main">
+    <article class="content" aria-label="Club Dress Code">
+      <i>Our attire standards benefit everyone because clothing can elevate or diminish the experience of the room. Our staff takes pride in their appearance and appreciate you respecting our guidelines.</i>
+
+      <h3 class="subheader">Sand Bar</h3>
+      <ul class="ital">
+        <li>Shirts/cover-ups and proper footwear must be worn at both the interior and exterior dining areas and bars.</li>
+        <li>Tee shirts must be in good condition and not have inappropriate print on them.</li>
+        <li>Denim of any color must be appropriately appointed and free of frayed ends, holes, tears, and patches or fading.</li>
+        <li>Hats are permitted inside the dining area.</li>
+      </ul>
+
+      <h3 class="subheader">Clubhouse Dining & Common Areas (before 5:30pm)</h3>
+      <ul class="ital">
+        <li>Blue jeans, denim shorts, skirts, or jackets are not permitted.</li>
+        <li>Clothing with frayed ends, holes, tears, patches, and fading are not permitted.</li>
+        <li>All other denim colors in pristine condition are permitted.</li>
+        <li>Appropriate golf and tennis attire is acceptable.</li>
+        <li>Blue denim, tank tops, tee shirts, swimwear, cover-ups, and cut-off shorts are not appropriate wear in the clubhouse or on the patio.</li>
+        <li>Gentlemen, please remove your hats when entering the clubhouse.</li>
+      </ul>
+
+      <h3 class="subheader">Clubhouse Dining & Common Areas (after 5:30pm)</h3>
+      <ul class="ital">
+        <li>The Country Club Casual dress code permits long pants or dress “Bermuda” shorts, collared shirts, and appropriate footwear for men.</li>
+        <li>Shorts must be no more than 4 inches above the knee and shirttails must be tucked in except if the shirt is designed to be untucked.</li>
+        <li>“Crocs”, flip-flops, beach shoes, basketball shoes, and all-terrain shoes are not considered appropriate footwear.</li>
+        <li><strong>NOTE:</strong> Country Club Casual is also the dress code for Sunday brunch.</li>
+      </ul>
+
+      <h3 class="subheader">The Reserve & Sunday Brunch</h3>
+      <ul class="ital">
+        <li>The Country Club dress code permits long pants, collared shirts, “Bermuda” shorts and appropriate footwear for men. Jackets are always welcome.</li>
+        <li>Shorts must be no more than 4 inches above the knee and shirt tails must be tucked in.</li>
+        <li>“Crocs”, flip-flops, beach shoes, basketball shoes, and all-terrain shoes are not considered appropriate footwear.</li>
+      </ul>
+
+      <p style="font-style:italic; margin-top:1em;">If the dress code is modified for a special event, details will be included in the event invitation.</p>
+
+      <i>Thank you for your cooperation.</i>
+    </article>
+  </main>
+</body>
+</html>

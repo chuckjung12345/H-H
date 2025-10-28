@@ -3,379 +3,236 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Highlights & Happenings — Banner</title>
+<title>Highlights & Happenings – Email Demo</title>
 <style>
-/* ───────────────────────────────────────────
-   HOUSE STYLE – MARINER SANDS DEMO (NEWSPAPER)
-─────────────────────────────────────────── */
-:root {
-  --bg: #ffffff;
-  --ink: #0f172a;
-  --muted: #475569;
-  --rule: #d9d9d9;           /* thin gray divider */
-  --accent: #0b3d91;         /* Mariner Sands blue */
-  --max: 960px;              /* max page width */
-  --measure: 66ch;           /* ideal text width */
-  --gap: 20px;
-}
-
-/* ───────────────────────────────────────────
-   BASE STRUCTURE
-─────────────────────────────────────────── */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.55;
-}
-
-main {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 20px 60px;
-}
-
-/* Masthead */
-header.banner {
-  text-align: center;
-  padding: 48px 20px 24px;
-  background: #fff; /* fallback */
-  background: linear-gradient(#fff, #fafbfc);
-  border-bottom: 1px solid var(--rule);
-}
-/* Desktop & tablet — keep your original large size */
-header.banner h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 5vw, 54px);  /* same desktop feel as before */
-  line-height: 1.05;
-  letter-spacing: 0.5px;
-  color: var(--accent);
-  margin: 0;
-  white-space: nowrap;                  /* never wrap */
-}
-
-/* Phone-only: force a smaller cap so it stays on one line */
-@media (max-width: 480px) {
-  header.banner h1 {
-    font-size: 24px;       /* bump to 26–28px if it still fits */
-    letter-spacing: 0;     /* tighter tracking helps fit */
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6f8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0f172a;
   }
-}
-
-header.banner .subtitle {
-  color: var(--muted);
-  margin: 10px 0 0;
-  font-size: clamp(16px, 1.6vw, 20px);
-}
-
-/* ───────────────────────────────────────────
-   ARTICLE LAYOUT (single column newspaper)
-─────────────────────────────────────────── */
-.article {
-  max-width: var(--measure);       /* readable line length */
-  margin: 0 auto;
-  padding: 28px 0;
-  border-top: 1px solid var(--rule);
-}
-.article:first-of-type { border-top: none; }
-
-.article h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(20px, 1.9vw, 27px);
-  line-height: 1.2;
-  margin: 0 0 10px;
-  color: var(--ink);
-}
-.article p {
-  margin: 0 0 14px;
-}
-.article .meta {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-
-/* Image + text row */
-.box-row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--gap);
-  margin-bottom: 10px;
-}
-.thumb-1in {
-  flex-shrink: 0;
-  width: 96px;
-  height: 96px;
-  border-radius: 8px;
-  background: #f3f4f6;
-  border: 1px solid var(--rule);
-  overflow: hidden;
-}
-.thumb-1in img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Labels (“Board of Governors”, “Clubhouse Opening”, etc.) */
-.band {
-  background: transparent;
-  color: var(--accent);
-  padding: 0;
-  margin: 0 0 10px 0;
-  font: 700 12px/1.2 Arial, Helvetica, sans-serif;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  display: inline-block;
-}
-
-/* CTA button (centered under text) */
-.cta-btn {
-  display: inline-block;
-  margin-top: 6px;
-  background: #ffffff;
-  color: var(--accent);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 10px 18px;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-}
-.cta-btn:hover { background: #f0f4fa; }
-
-/* Center CTA within the text column */
-.box-row > *:last-child { text-align: center; }
-
-/* ───────────────────────────────────────────
-   RESPONSIVE ADJUSTMENTS
-─────────────────────────────────────────── */
-@media (max-width: 900px) {
-  main { padding: 0 16px 48px; }
-}
-@media (max-width: 768px) {
-  .box-row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .thumb-1in { width: 80px; height: 80px; }
-  .article { padding: 20px 0; }
-}
-
-/* ── H&H Article Tight Pack (drop-in overrides) ───────── */
-:root {
-  --gap: 14px;                /* was 20px */
-  --measure: 64ch;            /* was 66ch; keeps CPL ~standard but tighter */
-}
-
-/* Article container: reduce vertical air */
-.article {
-  padding: 20px 0;            /* was 28px 0 */
-}
-
-/* Headlines: slightly smaller cap, same elegance */
-.article h2 {
-  font-size: clamp(20px, 1.8vw, 26px);   /* was clamp(22px, 2vw, 28px) */
-  margin: 0 0 8px;                        /* was 10px */
-}
-
-/* Body paragraphs: closer leading between blocks */
-.article p {
-  margin: 0 0 12px;           /* was 14px */
-}
-
-/* Meta stays small but give a hair less space */
-.article .meta {
-  margin-bottom: 10px;        /* was 14px */
-}
-
-/* Row layout: tighten gutters and thumbnail size */
-.box-row {
-  gap: var(--gap);            /* smaller gap propagates here */
-  margin-bottom: 6px;         /* was 10px */
-}
-.thumb-1in {
-  width: 88px;                /* was 96px */
-  height: 88px;
-}
-
-/* Bands (section labels): reduce visual weight slightly */
-.band {
-  font: 700 11px/1.2 Arial, Helvetica, sans-serif;  /* was 12px */
-  margin: 0 0 6px 0;         /* was 10px */
-}
-
-/* CTA: tighter button */
-.cta-btn {
-  padding: 8px 14px;          /* was 10px 18px */
-  margin-top: 4px;            /* was 6px */
-  border-radius: 5px;         /* was 6px */
-}
-
-/* Responsive tune-ups on smaller screens */
-@media (max-width: 768px) {
-  .article { padding: 16px 0; }                    /* was 20px */
-  .thumb-1in { width: 76px; height: 76px; }        /* was 80px */
-  .band { font-size: 10.5px; }
-}
-
-
-.card--tab .tab { color: #0b3d91; }
-
-/* Small screens: replace text banner with the H&H.png image */
-@media (max-width: 480px){
-  header.banner h1,
-  header.banner .subtitle { display: none; }
-
-  header.banner::after{
-    content: "";
-    display: block;
-    width: 100%;
-    max-width: 480px;          /* keep it neat on tiny phones */
+  .wrapper {
+    max-width: 640px;
     margin: 0 auto;
-    aspect-ratio: 5 / 1;       /* adjust if your image is taller/shorter */
-    background: url('H%26H.png') center / contain no-repeat;
-    /* If possible, rename the file to HH.png and use:
-       background: url('HH.png') center / contain no-repeat; */
+    background: #ffffff;
   }
+  /* Banner */
+  .hh-banner {
+    background-color: #003a70;
+    color: #fff;
+    text-align: center;
+    padding: 0.35em 16px;
+  }
+  .hh-banner h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    margin: 0;
+    white-space: nowrap;
+    font-size: clamp(16px, 4vw, 44px);
+  }
+  .hh-banner p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.1;
+    margin: 2px 0 0 0;
+    font-size: clamp(13px, 1.8vw, 18px);
+  }
+  /* Main Article */
+  .hh-main-article {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 24px 20px;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #003a70;
+    border-left: 4px solid #c7a34b;
+    padding-left: .6rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .hh-main-article h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+  }
+  .hh-main-article h1 a {
+    color: #0f172a;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+  .hh-main-article h1 a:hover { border-bottom-color: #003a70; }
+  .hero {
+    margin: 10px 0 16px 0;
+    border: 1px solid #e5e7eb;
+  }
+  .hero img, .hero object {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hh-main-article p.lede {
+    margin: 8px 0 16px 0;
+    color: #475569;
+    font-size: 16px;
+  }
+  .cta {
+    display: inline-block;
+    background: #003a70;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 999px;
+  }
+  /* Secondary Articles */
+  .articles-section {
+    background: #ffffff;
+    padding: 20px 16px;
+  }
+  .article {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+  }
+  .article:last-of-type { border-bottom: none; }
+  .article img {
+    width: 25%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: top center;
+  }
+/* Target 2nd–4th secondary article images only */
+.articles-section .article:nth-of-type(n+2):nth-of-type(-n+4) img {
+  width: 18%;             /* narrower image reduces height proportionally */
+  height: auto;
+  max-height: 160px;      /* additional safety cap for large screens */
+  object-fit: contain;    /* keeps correct ratio, no cropping */
 }
 
-</style>
-
-</head>
-<body>
-  <header class="banner">
-  <h1>Highlights &amp; Happenings</h1>
-  <p class="subtitle">6 October 2025 • Mariner Sands Country Club</p>
-</header>
-
-  <div class="divider-wide" aria-hidden="true"></div>
-
-  <main class="main" aria-label="Center column">
-    
-
-    <!-- Pattern A: Card containment (most polished, best for lead/feature pieces) -->
-    <article class="article rule card--tab" aria-label="Board of Governors">
-      <div class="tab">BOARD OF GOVERNORS</div>
-      <h2 class="headline headline--center">Mariner Sands rebounds quickly from last October’s tornado — no casualties</h2>
-      
-      <details class="accordion" style="margin:10px 0 0 24px;">
-        <summary><span class="chev" aria-hidden="true">▸</span> <span class="kicker">Key facts</span></summary>
-        <ul class="facts">
-        <li><strong>Date:</strong> Oct 9, 2024 — tornado in Hurricane Milton’s aftermath</li>
-        <li><strong>Impact:</strong> 60 homes affected — 43 with exterior damage; 6 destroyed or leveled</li>
-        <li><strong>Good news:</strong> No casualties</li>
-      </ul>
-      </details>
-      <p class="summary" style="margin:12px 0 0 24px;">Thank you to first responders, staff, member volunteers, and partner charities for their swift, coordinated response.</p>
-      <div style="margin:12px 0 0 24px;"><a class="cta-btn" href="./BOG_Tornado_final.html" role="button">
-  View BOG Update →
-</a>
-</div>
-    </article>
-
-    <article class="article rule card--band" aria-label="Clubhouse Opening — Save the Date">
-  <div class="band">CLUBHOUSE OPENING - SAVE THE DATE</div>
-  <div class="box-row">
-    <figure class="thumb-1in">
-      <img src="Clubhouse.png" alt="Clubhouse exterior" width="160" height="160" loading="lazy" />
-    </figure>
-    <div class="box-text">
-      <h2 class="box-title">Memories in the Making — Clubhouse Grand Opening Celebration, Nov 7 & 8</h2>
-      <a class="cta-btn" href="Save-final.html" role="button">Read the Description →</a>
-    </div>
-  </div>
-</article>
+/* On small phones */
+@media (max-width: 600px) {
+  .articles-section .article:nth-of-type(n+2):nth-of-type(-n+4) img {
+    width: 100%;
+    max-height: 20vh;     /* reduced presence on phone */
+    object-fit: contain;
+  }
+}
+  
 
 
-    <article class="article rule card--band" aria-label="Cocktail of the Week">
-      <div class="band">COCKTAIL OF THE WEEK</div>
-      <div class="box-row">
-        <figure class="thumb-1in" aria-label="Cocktail of the Week image">
-          <img src="Drink.png" alt="Cocktail of the Week" />
-        </figure>
-        <div class="box-text">
-          <h2 class="box-title">Citrus Sage Spritz — this week’s cocktail</h2>
-          <a class="cta-btn" href="Drink.html" role="button">View Ad →</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="article rule card--band" aria-label="Employee Spotlight">
-      <div class="band">EMPLOYEE SPOTLIGHT</div>
-      <div class="box-row">
-        <figure class="thumb-1in" aria-label="Employee Spotlight image">
-          <img src="Kat.jpg" alt="Employee Spotlight — Kat Broccolli" />
-        </figure>
-        <div class="box-text">
-          <h2 class="box-title">Meet Kat Broccolli — dining team pro keeping service humming</h2>
-          <a class="cta-btn" href="Kat-final.html" role="button">Meet Kat →</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="article rule card--band" aria-label="Club Dress Code">
-      <div class="band">CLUB DRESS CODE</div>
-      <div class="box-row">
-        <figure class="thumb-1in" aria-label="Dress code image">
-          <img src="Dress_Rules.png" alt="Club Dress Code" />
-        </figure>
-        <div class="box-text">
-          <h2 class="box-title">Club Dress Code — quick guide, now phone‑friendly</h2>
-          <a class="cta-btn" href="Club_Dress_Code_Final.html" role="button">Read the Dress Code →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Pattern B: Minimal rules (best for lists of shorter items) -->
-    
-
-    <!-- Pattern C: Accent bar (category emphasis without heavy chrome) -->
-    
-
-    
-  </main>
-<style>
-  /* Keep landing title on one line and progressively shrink on small phones */
-  @media (max-width: 480px) {
-    #hh-title {
-      white-space: nowrap;           /* never wrap */
-      line-height: 1.1;
-      font-size: clamp(16px, 5.8vw, 22px);
+.article-content {
+    flex: 1;
+  }
+  .article-eyebrow {
+    font-weight: 700;
+    font-size: 13px;
+    color: #003a70;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .article-title {
+    margin: 0 0 8px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .article-title a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+  .article-title a:hover { text-decoration: underline; }
+  .article-text {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+  }
+  @media (max-width: 600px) {
+    .article {
+      flex-direction: column;
+    }
+    .article img {
+      width: 100%;
+      max-height: none;
     }
   }
-  @media (max-width: 380px) {
-    #hh-title { font-size: 5.2vw; }  /* shrink more on very small screens */
-  }
-  @media (max-width: 340px) {
-    #hh-title { font-size: 4.8vw; }  /* and a bit more if needed */
-  }
-/* Phone-only: keep H&H on one line and shrink progressively */
-@media (max-width: 480px) {
-  header.banner h1 {
-    white-space: nowrap;       /* never wrap */
-    line-height: 1.1;
-    letter-spacing: 0;
-    font-size: clamp(18px, 5.2vw, 24px);
-  }
-}
-
-/* Very small phones */
-@media (max-width: 380px) {
-  header.banner h1 { font-size: 4.8vw; }
-}
-@media (max-width: 340px) {
-  header.banner h1 { font-size: 4.4vw; }
-}
-
 </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Banner -->
+    <header class="hh-banner">
+  <img
+    src="H&H.png"
+    alt="Highlights & Happenings — Mariner Sands Country Club"
+    style="width:100%; height:auto; display:block; margin:0 auto;"
+  >
+</header>
 
+
+    <!-- Main Article -->
+    <section class="hh-main-article">
+      <div class="eyebrow">BOARD OF GOVERNORS</div>
+      <h1><a href="BOG.html">Mariner Sands quickly rebounds from last October’s tornado — thankfully no casualties</a></h1>
+      <div class="hero">
+  <img src="Storm1.png" alt="Storm damage/recovery scene">
+
+       
+      </div>
+      <p class="lede">Thank you to first responders, staff, member volunteers, and partner charities for your swift, coordinated response. </p>
+      <a class="cta" href="BOG.html">Read BOG Letter →</a>
+    </section>
+
+    <!-- Secondary Articles -->
+    <section class="articles-section">
+      <article class="article">
+        <img src="Clubhouse.png" alt="Clubhouse exterior">
+        <div class="article-content">
+          <span class="article-eyebrow">SAVE THE DATE</span>
+          <h2 class="article-title"><a href="Save.html">Grand Clubhouse Opening — From Ribbon Cutting to Gala Dining, A Celebration to Remember, Nov 7 & 8</a></h2>
+          <p class="article-text">Join us as we officially celebrate the Grand Opening of our New Clubhouse!</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="Kat.jpg" alt="Kathryn portrait">
+        <div class="article-content">
+          <span class="article-eyebrow">EMPLOYEE SPOTLIGHT</span>
+          <h2 class="article-title"><a href="Kat.html">Meet Kat Broccolli — Assistant Food & Beverage Manager</a></h2>
+          <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non magna sit amet justo convallis dapibus vitae nec ipsum.</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="Drink.png" alt="Cocktail of the Week">
+        <div class="article-content">
+          <span class="article-eyebrow">COCKTAIL OF THE WEEK</span>
+          <h2 class="article-title"><a href="Drink.html">Enjoy a Spiked Cherry Limeade -  this week's special cocktail</a></h2>
+          <p class="article-text">Integer malesuada dui non justo gravida, vel tempus turpis tincidunt. Aenean viverra at ipsum et placerat.</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="Dress_Rules.png" alt="Club Dress Code">
+        <div class="article-content">
+          <span class="article-eyebrow">CLUB DRESS CODE</span>
+          <h2 class="article-title"><a href="Dress.html">Club Dress Code — quick guide, now phone‑friendly</a></h2>
+          <p class="article-text">Cras euismod lectus nec tellus vulputate, ut tincidunt lacus tristique. Vivamus vel quam vitae ante mollis tempor.</p>
+        </div>
+      </article>
+    </section>
+  </div>
 </body>
 </html>

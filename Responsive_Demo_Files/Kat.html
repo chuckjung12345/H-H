@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WELCOME — Kathryn Broccoli</title>
+<meta name="description" content="Welcome Kathryn Broccoli, Assistant Director of Food & Beverage — readable on any screen.">
+<!-- H&H Frame: blue banner, edging, shadow -->
+<style>
+  :root{
+    /* Frame + brand tokens */
+    --ms-blue:#003a70;   /* Mariner Sands blue */
+    --ink:#111;          /* Primary text */
+    --paper:#ffffff;     /* Card background */
+    --page:#f3f4f6;      /* Page background */
+    --font-body: system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+    --font-size: clamp(1rem, 0.7rem + 0.9vw, 1.1rem);
+    --font-leading: 1.45; /* comfortable default */
+    --radius: 18px;
+    --pad: clamp(14px, 1.6vw, 22px);
+    --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 28px rgba(0,0,0,.12);
+    --border: 1px solid rgba(0,58,112,.1);
+    --card-max: 820px;
+  }
+  html{ color-scheme: light only; }
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:var(--font-body); font-size:var(--font-size); line-height:var(--font-leading);
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    display:grid; place-items:start center; padding:32px 12px 64px;
+  }
+  /* Framed article card */
+  .article-card{
+    width:min(100%, var(--card-max));
+    background:var(--paper);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    border:var(--border);
+    overflow:hidden;
+  }
+  .article-head{
+    background:var(--ms-blue); color:#fff; text-align:center;
+    padding: clamp(6px, 0.8vw, 10px) clamp(18px, 2vw, 28px);
+    font-family:'Georgia', serif; font-weight:400;
+    font-size: clamp(1rem, 0.8rem + 0.9vw, 1.4rem);
+    letter-spacing:.2px; white-space:nowrap;
+  }
+  .article-body{ padding: var(--pad); }
+  /* === Original page styles (preserved) === */
+  .wrap{ width:100%; margin:0 auto; }
+  h1{ font-weight:900; text-align:center; margin:10px 0 8px; font-size:clamp(2rem,6.5vw,3rem); line-height:1.15; letter-spacing:.5px; color:var(--ms-blue); font-family:'Georgia', serif; }
+  .meta{ text-align:center; color:#555; margin:0 0 14px; }
+  p, li{ font-size:clamp(1rem,2.6vw,1.1875rem); }
+  p{ margin:0 0 14px; }
+  .lead img{
+    float:left; height:33vh; max-height:33vh; width:auto;
+    margin:0 16px 10px 0; border-radius:6px; display:block;
+  }
+  .lead::after{ content:""; display:block; clear:both; }
+  @media (max-width:520px){ .lead img{ float:none; height:auto; max-height:none; width:100%; margin:0 0 12px 0; } }
+  /* Ensure the back button stays within the card */
+  .article-body { position:relative; }
+</style>
+  <!-- HAL MASTER: Phone-first refinements + image best-practice cap -->
+  <style id="hal-phone-master">
+    /* Best practice: prevent default margins from creating edge gaps */
+    html, body { margin: 0; }
+    /* Phone-only adjustments (≤480px) */
+    @media (max-width: 480px){
+      /* Remove page padding so card/banner can sit flush on small screens */
+      body { padding: 0 !important; }
+      /* Remove 'edging' on the card (border, shadow, radius) for phones */
+      .article-card{
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+      }
+      /* Ensure banner spans full width on phones */
+      .article-head{
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        left: 0; right: 0;
+        position: relative;
+      }
+      /* Limit lead image height to ~20% of viewport; keep width responsive.
+         Use object-fit: cover to preserve composition without distortion. */
+      
+      .lead img{
+        display: block;
+        width: auto;          /* preserve original width/ratio */
+        max-width: 100%;      /* never overflow container */
+        height: auto;         /* keep natural aspect ratio */
+        max-height: 35vh;     /* cap to ~20% of viewport height */
+        margin: 0 auto;       /* center when narrower than container */
+      }
+    
+      /* Guard against stray top margins collapsing above banner */
+      .article-card > *:first-child,
+      .article-body > *:first-child,
+      main.wrap > *:first-child { margin-top: 0 !important; }
+    }
+  </style>
+
+  
+
+<style id="hal-phone-img-margin">
+  @media (max-width: 480px){
+    .lead img{
+      margin: 0 auto 12px !important; /* left/right auto; 12px bottom gap on phones only */
+    }
+  }
+</style>
+</head>
+<body>
+  <article class="article-card" aria-label="H&H Article — Kathryn Broccoli">
+    <header class="article-head">EMPLOYEE SPOTLIGHT</header>
+    <section class="article-body">
+      <main class="wrap">
+        <h1>WELCOME</h1>
+        <section class="lead">
+          <img src="./Kat.jpg" alt="Portrait of Kathryn Broccoli" loading="eager">
+          <p><strong>Kathryn Broccoli</strong><br><em>Assistant Director of Food &amp; Beverage</em></p>
+          <p>Kat is an experienced hospitality manager with strong administrative skills and a proven track record of building relationships with membership and staff. She holds a degree in Humanities and a Paralegal Certificate, complemented by additional studies in general education from Indian River State College.</p>
+          <p>Kat previously served as a Dining Manager at Harbour Ridge Yacht &amp; Country Club, where she led teams, developed training plans, and enhanced member experiences through positive engagement. Her high-energy and organized approach shines in collaborative environments focused on problem-solving. Prior to that, Kat worked as the Assistant General Manager at District Table in Stuart.</p>
+          <p>Kat is originally from Ridgefield, Connecticut and now resides in Stuart with her two dogs. A dedicated sports fan, she follows the Jets, Yankees, and Panthers! Before returning to Florida, Kat spent seven years living in Chicago.</p>
+          <p><strong>Welcome, Kat!</strong></p>
+        </section>
+      </main>
+    </section>
+  </article>
+</body>
+</html>
