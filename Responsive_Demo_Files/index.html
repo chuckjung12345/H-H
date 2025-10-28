@@ -5,12 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Highlights & Happenings – Email Demo</title>
 <style>
+  /* ---- Global safeguards ---- */
+  html {
+    -webkit-text-size-adjust: 100%;   /* stop Safari from shrinking text */
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; height: auto; display: block; }
   body {
     margin: 0;
     padding: 0;
     background: #f5f6f8;
     font-family: Arial, Helvetica, sans-serif;
     color: #0f172a;
+
+    /* unified, responsive base size for the whole page */
+    font-size: clamp(16px, 4.2vw, 18px);
+    line-height: 1.5;
   }
   .wrapper {
     max-width: 640px;
@@ -81,11 +91,14 @@
     height: auto;
     display: block;
   }
-  .hh-main-article p.lede {
-    margin: 8px 0 16px 0;
-    color: #475569;
-    font-size: 16px;
-  }
+ .hh-main-article p.lede {
+  margin: 8px 0 16px 0;   /* restore */
+  color: #475569;         /* restore */
+  font-size: inherit;     /* keep */
+  line-height: inherit;   /* keep */
+}
+
+
   .cta {
     display: inline-block;
     background: #003a70;
@@ -158,10 +171,11 @@
   }
   .article-title a:hover { text-decoration: underline; }
   .article-text {
-    font-size: 15px;
-    color: #475569;
-    line-height: 1.5;
-  }
+  font-size: inherit;     /* was 15px */
+  color: #475569;
+  line-height: inherit;   /* matches body line-height */
+}
+
   @media (max-width: 600px) {
     .article {
       flex-direction: column;
