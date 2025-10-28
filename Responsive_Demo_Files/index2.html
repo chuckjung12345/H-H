@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Highlights & Happenings – Email Demo</title>
+<style>
+  /* ---- Global safeguards ---- */
+  html {
+    -webkit-text-size-adjust: 100%;   /* stop Safari from shrinking text */
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; height: auto; display: block; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6f8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0f172a;
+
+    /* unified, responsive base size for the whole page */
+    font-size: clamp(16px, 4.2vw, 18px);
+    line-height: 1.5;
+  }
+  .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #ffffff;
+  }
+  /* Banner */
+  .hh-banner {
+    background-color: #003a70;
+    color: #fff;
+    text-align: center;
+    padding: 0.35em 16px;
+  }
+  .hh-banner h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    margin: 0;
+    white-space: nowrap;
+    font-size: clamp(16px, 4vw, 44px);
+  }
+  .hh-banner p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.1;
+    margin: 2px 0 0 0;
+    font-size: clamp(13px, 1.8vw, 18px);
+  }
+  /* Main Article */
+  .hh-main-article {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 24px 20px;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #003a70;
+    border-left: 4px solid #c7a34b;
+    padding-left: .6rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .hh-main-article h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+  }
+  .hh-main-article h1 a {
+    color: #0f172a;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+  .hh-main-article h1 a:hover { border-bottom-color: #003a70; }
+  .hero {
+    margin: 10px 0 16px 0;
+    border: 1px solid #e5e7eb;
+  }
+  .hero img, .hero object {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+ .hh-main-article p.lede {
+  margin: 8px 0 16px 0;   /* restore */
+  color: #475569;         /* restore */
+  font-size: inherit;     /* keep */
+  line-height: inherit;   /* keep */
+}
+
+
+  .cta {
+    display: inline-block;
+    background: #003a70;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 999px;
+  }
+  /* Secondary Articles */
+  .articles-section {
+    background: #ffffff;
+    padding: 20px 16px;
+  }
+  .article {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+  }
+  .article:last-of-type { border-bottom: none; }
+  .article img {
+    width: 25%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: top center;
+  }
+/* Target 2nd–4th secondary article images only */
+.articles-section .article:nth-of-type(n+2):nth-of-type(-n+4) img {
+  width: 18%;             /* narrower image reduces height proportionally */
+  height: auto;
+  max-height: 160px;      /* additional safety cap for large screens */
+  object-fit: contain;    /* keeps correct ratio, no cropping */
+}
+
+/* On small phones */
+@media (max-width: 600px) {
+  .articles-section .article:nth-of-type(n+2):nth-of-type(-n+4) img {
+    width: 100%;
+    max-height: 20vh;     /* reduced presence on phone */
+    object-fit: contain;
+  }
+}
+  
+
+
+.article-content {
+    flex: 1;
+  }
+  .article-eyebrow {
+    font-weight: 700;
+    font-size: 13px;
+    color: #003a70;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .article-title {
+    margin: 0 0 8px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .article-title a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+  .article-title a:hover { text-decoration: underline; }
+  .article-text {
+  font-size: inherit;     /* was 15px */
+  color: #475569;
+  line-height: inherit;   /* matches body line-height */
+}
+
+  @media (max-width: 600px) {
+    .article {
+      flex-direction: column;
+    }
+    .article img {
+      width: 100%;
+      max-height: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Banner -->
+    <header class="hh-banner">
+  <img
+    src="H&H.png"
+    alt="Highlights & Happenings — Mariner Sands Country Club"
+    style="width:100%; height:auto; display:block; margin:0 auto;"
+  >
+</header>
+
+
+    <!-- Main Article -->
+    <section class="hh-main-article">
+      <div class="eyebrow">BOARD OF GOVERNORS</div>
+      <h1><a href="BOG.html">Mariner Sands quickly rebounds from last October’s tornado — thankfully no casualties</a></h1>
+      <div class="hero">
+  <img src="Storm1.png" alt="Storm damage/recovery scene">
+
+       
+      </div>
+      <p class="lede">Thank you to first responders, staff, member volunteers, and partner charities for your swift, coordinated response. </p>
+      <a class="cta" href="BOG.html">Read BOG Letter →</a>
+    </section>
+
+    <!-- Secondary Articles -->
+    <section class="articles-section">
+      <article class="article">
+        <img src="Clubhouse.png" alt="Clubhouse exterior">
+        <div class="article-content">
+          <span class="article-eyebrow">SAVE THE DATE</span>
+          <h2 class="article-title"><a href="Save.html">Grand Clubhouse Opening — From Ribbon Cutting to Gala Dining, A Celebration to Remember, Nov 7 & 8</a></h2>
+          <p class="article-text">Join us as we officially celebrate the Grand Opening of our New Clubhouse!</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="Kat.jpg" alt="Kathryn portrait">
+        <div class="article-content">
+          <span class="article-eyebrow">EMPLOYEE SPOTLIGHT</span>
+          <h2 class="article-title"><a href="Kat.html">Meet Kat Broccolli — Assistant Food & Beverage Manager</a></h2>
+          <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non magna sit amet justo convallis dapibus vitae nec ipsum.</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="Drink.png" alt="Cocktail of the Week">
+        <div class="article-content">
+          <span class="article-eyebrow">COCKTAIL OF THE WEEK</span>
+          <h2 class="article-title"><a href="Drink.html">Enjoy a Spiked Cherry Limeade -  this week's special cocktail</a></h2>
+          <p class="article-text">Integer malesuada dui non justo gravida, vel tempus turpis tincidunt. Aenean viverra at ipsum et placerat.</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="Dress_Rules.png" alt="Club Dress Code">
+        <div class="article-content">
+          <span class="article-eyebrow">CLUB DRESS CODE</span>
+          <h2 class="article-title"><a href="Dress.html">Club Dress Code — quick guide, now phone‑friendly</a></h2>
+          <p class="article-text">Cras euismod lectus nec tellus vulputate, ut tincidunt lacus tristique. Vivamus vel quam vitae ante mollis tempor.</p>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
