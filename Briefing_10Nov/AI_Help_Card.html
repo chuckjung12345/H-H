@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What AI Can Do to Help the Transition</title>
+  <style>
+    /* Scoped styles to avoid conflicts when embedded */
+    :root { --ms-blue:#003a70; --ms-gold:#c9a227; }
+    .ai-help-card {
+      max-width: 860px;
+      margin: 24px auto;
+      padding: 20px 22px;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
+      background: #fff;
+      font-family: Arial, Helvetica, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+      line-height: 1.5;
+    }
+    .ai-help-card h2 {
+      margin: 0 0 8px 0;
+      font-size: clamp(20px, 3.2vw, 28px);
+      color: var(--ms-blue);
+      letter-spacing: 0.1px;
+      font-weight: 700;
+    }
+    .ai-help-card .goldline {
+      width: 72px;
+      height: 3px;
+      background: var(--ms-gold);
+      border-radius: 2px;
+      margin: 6px 0 14px 0;
+    }
+    .ai-help-card p.tagline {
+      margin: 0 0 12px 0;
+      font-style: italic;
+    }
+    .ai-help-card ul {
+      margin: 10px 0 14px 1.1em;
+      padding: 0;
+    }
+    .ai-help-card li {
+      margin: 6px 0;
+    }
+    .ai-help-card .result {
+      background: #f7f9fc;
+      border-left: 4px solid var(--ms-blue);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    /* Print-friendly */
+    @media print {
+      body { background: #fff; }
+      .ai-help-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="ai-help-card" role="region" aria-labelledby="ai-help-title">
+    <h2 id="ai-help-title">🧠 What AI Can Do to Help the Transition</h2>
+    <div class="goldline" aria-hidden="true"></div>
+    <p class="tagline"><strong>Tagline:</strong> <em>AI did this — and it can do a lot more for MS communications.</em></p>
+
+    <h3 style="margin:16px 0 6px 0; font-size:1.05rem; color:#111; font-weight:700;">How AI supports the move to responsive design:</h3>
+    <ul>
+      <li>Converts existing PDFs and Flipbooks into mobile-friendly HTML layouts.</li>
+      <li>Drafts clear, consistent prose from outlines, tables, or raw notes.</li>
+      <li>Builds responsive templates that adapt automatically to phone, tablet, or desktop.</li>
+      <li>Generates accessible (WCAG-compliant) color palettes, text sizes, and layouts.</li>
+      <li>Prepares ready-to-publish cards, newsletters, and landing pages — no HTML editor required.</li>
+      <li>Enables staff to focus on message and design intent rather than formatting.</li>
+    </ul>
+
+    <div class="result">Result: Faster turnaround, consistent brand presentation, and readable communications on every device.</div>
+  </article>
+</body>
+</html>

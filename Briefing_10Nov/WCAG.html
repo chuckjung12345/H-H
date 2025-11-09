@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WCAG & CPL Responsive Card Fix</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 2rem;
+    line-height: 1.55; /* WCAG-friendly default for body text */
+  }
+  .card {
+    background: #fff;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+  }
+  h2 {
+    color: #003a70;
+    margin-bottom: 0.5rem;
+    line-height: 1.2; /* headings tighter than body for hierarchy */
+  }
+  .subtitle {
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  table.wcag-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.4; /* improve table readability on phone */
+  }
+  th {
+    background: #003a70;
+    color: white;
+  }
+  td.range, td.sweet {
+    white-space: nowrap;
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+  .keypoint {
+    background: #fff8e1;
+    border-left: 4px solid #ffb300;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    line-height: 1.5; /* callout remains comfortable */
+  }
+  .bar-container {
+    margin-top: 0.75rem;
+    background: #eee;
+    border-radius: 5px;
+    height: 12px;
+    position: relative;
+  }
+  .bar.phone {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 20%;
+    height: 100%;
+    background: #005fa3;
+    border-radius: 5px;
+  }
+  .bar.desktop {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 25%;
+    height: 100%;
+    background: #888;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="subtitle">ACCESSIBILITY • WCAG 2.0 (2015) → 2.2 (CURRENT)</div>
+  <h2>WCAG & CPL — The Readability Standard for Digital Communication</h2>
+  <ul>
+    <li><strong>WCAG</strong> has been the accepted web-accessibility benchmark since 2015; major publishers and news organizations follow it.</li>
+    <li>It defines readability rules covering contrast, spacing, and reflow across all devices.</li>
+    <li>For Mariner Sands, the critical metric is <strong>Characters Per Line (CPL)</strong> — the factor that determines real-world legibility.</li>
+  </ul>
+
+  <table class="wcag-table">
+    <thead>
+      <tr><th>Device</th><th>Width (px)</th><th>Range (CPL)</th><th>Sweet Spot</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Phone</td><td>360–430</td><td class="range"><span class="nowrap">38–48</span></td><td class="sweet">≈42</td></tr>
+      <tr><td>Tablet</td><td>740–820</td><td class="range"><span class="nowrap">55–65</span></td><td class="sweet">≈60</td></tr>
+      <tr><td>Desktop</td><td>1024–1200</td><td class="range"><span class="nowrap">60–75</span></td><td class="sweet">≈66</td></tr>
+    </tbody>
+  </table>
+
+  <div class="keypoint">
+    <strong>Key Point:</strong> The <em>phone</em> band (<span class="nowrap">38–48 CPL</span>) and <em>desktop</em> band (<span class="nowrap">60–75 CPL</span>) do not overlap. Their sweet spots (≈42 vs ≈66) are widely separated — no fixed PDF or flipbook can be optimal for both.
+  </div>
+
+  <div class="bar-container">
+    <div class="bar phone"></div>
+    <div class="bar desktop"></div>
+  </div>
+
+  <p style="margin-top:1.5rem;">
+    <strong>WCAG Reflow:</strong> Text must wrap without horizontal scrolling at ≤320 px width. PDFs and flipbooks cannot meet this rule.
+    <br><strong>Result:</strong> A desktop‑optimized PDF is never mobile‑compliant.
+    <br><strong>Solution:</strong> Responsive HTML adjusts line length and spacing automatically per device.
+  </p>
+</div>
+
+</body>
+</html>

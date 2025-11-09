@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Reserve — Dinner Menu (iPad / Phone)</title>
+  <style>
+    :root{
+      --cream: #F6F2EA;
+      --ink:   #222;
+      --red:   #8B1A1A;
+      --page:  7.5in;
+      --gutter: 0.30in;
+    }
+
+    html, body { margin: 0; padding: 0; }
+    body{
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.35;
+      font-size: clamp(18px, 2vw, 22px);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .sans { font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; }
+
+    .wrap{ max-width: var(--page); margin: 0 auto; padding: 16px; }
+
+    header.brand{ text-align: center; margin-bottom: .25rem; }
+    header.brand .title{ letter-spacing: .22em; font-weight: 400; color: var(--red); font-size: clamp(26px, 6vw, 36px); font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; }
+    header.brand .kicker{ font-size: clamp(14px, 3.5vw, 16px); letter-spacing: .18em; margin-top: 4px; opacity: .9; font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; font-weight: 400; padding-bottom: 10px; }
+
+    .menu{ display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .col{ display:block; }
+    @media (min-width: 740px){
+      body{ font-size: 19px; }
+      .wrap{ padding: 24px; }
+      .menu{ grid-template-columns: 1fr 1fr; column-gap: var(--gutter); row-gap: 0; }
+      .col{ display:block; }
+    }
+
+    .section{ margin-bottom: 1.25rem; }
+    .section .section-box{
+      position: relative; text-align: center; margin: .2rem 0 .75rem;
+      padding: 10px 8px;
+    }
+    .section .section-box::before,
+    .section .section-box::after{
+      content: ""; position: absolute; inset: 0; pointer-events: none; display: block;
+    }
+    .section .section-box::before{ border: 3px solid var(--red); }
+    .section .section-box::after{ border: 1px solid var(--red); inset: 5px; }
+
+    .section .section-title{ color: var(--ink); font-weight: normal; }
+    .section .section-title.sans{ letter-spacing: .16em; }
+
+    .item{ padding: 4px 0 8px; }
+    .item .name{ font-variant: small-caps; font-weight: normal; letter-spacing: .04em; }
+    .item .desc{ margin-top: 2px; font-size: .92em; opacity: .9; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.2; }
+    .item .price{ color: var(--red); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    @media print{
+      @page { size: 8.5in 11in; margin: .5in; }
+      body{ background: white; }
+      .wrap{ max-width: 100%; padding: 0; }
+      .menu{ grid-template-columns: 1fr 1fr; column-gap: var(--gutter); }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="brand">
+      <div class="title sans">THE RESERVE</div>
+      <div class="kicker sans">DINNER</div>
+    </header>
+
+    <!-- RESERVE MASTER MENU -->
+    <div class="menu">
+      <div class="col col-left" style="padding-top:10px;">
+        <!-- LEFT COLUMN -->
+        <section class="section" aria-labelledby="small-plates">
+          <div class="section-box">
+            <div id="small-plates" class="section-title sans">– SMALL PLATES –</div>
+          </div>
+          <div class="item"><div class="name">ONION SOUP GRATINEE</div><div class="desc">gruyere cheese <span class="price">12</span></div></div>
+          <div class="item"><div class="name">DUCK CONFIT</div><div class="desc">frisée, lardons, poached egg, sourdough croutons, truffle &amp; sherry vinaigrette <span class="price">24</span></div></div>
+          <div class="item"><div class="name">COLOSSAL SHRIMP COCKTAIL <sup>gf</sup></div><div class="desc">horseradish cocktail sauce <span class="price">24</span></div></div>
+          <div class="item"><div class="name">BLUE CRAB CAKE</div><div class="desc">sweet corn, bell peppers, frisée, basil, lemon <span class="price">21</span></div></div>
+          <div class="item"><div class="name">ESCARGOT BOURGUIGNONNE</div><div class="desc">baked escargot, herb lemon garlic butter, puff pastry <span class="price">19</span></div></div>
+        </section>
+
+        <section class="section" aria-labelledby="salads">
+          <div class="section-box">
+            <div id="salads" class="section-title sans">– SALADS –</div>
+          </div>
+          <div class="item"><div class="name">HEIRLOOM TOMATO &amp; BURRATA</div><div class="desc">creamy burrata, farmhouse tomatoes, marinated grilled onions, baby arugula, aged balsamic focaccia croutons, basil vinaigrette <span class="price">21</span></div></div>
+          <div class="item"><div class="name">SCOTTISH SALMON SALAD <sup>gf</sup></div><div class="desc">chopped greens, avocado, heart of palm, grapefruit, roasted corn, red onion, lemon vinaigrette <span class="price">34</span></div></div>
+          <div class="item"><div class="name">THE RESERVE SALAD <sup>gf</sup></div><div class="desc">artisan greens, frisée, candied walnuts, blue cheese, cherry tomato, shaved red onion asian pear, balsamic vinaigrette <span class="price">16</span></div></div>
+        </section>
+      </div>
+
+      <div class="col col-right" style="padding-top:10px;">
+        <!-- RIGHT COLUMN -->
+        <section class="section" aria-labelledby="handhelds">
+          <div class="section-box">
+            <div id="handhelds" class="section-title sans">– HANDHELDS –</div>
+          </div>
+          <div class="item"><div class="name">THE RESERVE BURGER*</div><div class="desc">prime beef, short rib bacon jam, heirloom tomato, butter lettuce, shaved onion, special sauce, sharp cheddar, toasted sesame seed bun, waffle fries &amp; pickle <span class="price">22</span></div></div>
+          <div class="item"><div class="name">LOBSTER ROLL</div><div class="desc">butter poached maine lobster, old bay celery seed aioli, toasted brioche bun, waffle fries &amp; pickle <span class="price">36</span></div></div>
+        </section>
+
+        <section class="section" aria-labelledby="entrees">
+          <div class="section-box">
+            <div id="entrees" class="section-title sans">– ENTRÉES –</div>
+          </div>
+          <div class="item"><div class="name">GULF BLACK GROUPER <sup>gf</sup></div><div class="desc">smoked eggplant caviar, roasted fennel, garlic spinach, sauce vierge <span class="price">48</span></div></div>
+          <div class="item"><div class="name">ROCKY MOUNTAIN COLORADO LAMB CHOPS <sup>gf*</sup></div><div class="desc">herb crusted, yukon pomme purée, roasted maitake mushrooms, port-cranberry sauce, bordelaise <span class="price">58</span></div></div>
+          <div class="item"><div class="name">ROHAN DUCK BREAST <sup>gf*</sup></div><div class="desc">creamy truffle parmesan polenta, sautéed spinach, frisée, sweet cherry duck jus <span class="price">39</span></div></div>
+          <div class="item"><div class="name">SEAFOOD LINGUINI</div><div class="desc">fresh linguini, piquillo, mussels, blue crab, lobster, jumbo shrimp, fennel, espelette, grilled baguette, saffron tomato sauce <span class="price">46</span></div></div>
+          <div class="item"><div class="name">18OZ WAGYU RIBEYE*</div><div class="desc">truffle &amp; blue cheese waffle fries, sautéed asparagus, marinated tomatoes, roasted garlic black truffle butter <span class="price">65</span></div></div>
+          <div class="item"><div class="name">DUO OF BEEF* <sup>gf*</sup></div><div class="desc">burgundy braised beef short rib, pan roasted center cut filet, yukon pomme purée, roasted maitake mushrooms, petite carrots, red wine jus <span class="price">59</span></div></div>
+        </section>
+      </div>
+    </div>
+
+    <p class="sans" style="text-align:center; font-size:.8em; opacity:.75; margin: 10px 0 0;">
+      *Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness. (gf) Gluten Free
+    </p>
+  </main>
+</body>
+</html>

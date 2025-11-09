@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Converting Mariner Sands PDF Docs to Responsive</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 {
+      text-align: center;
+      font-size: clamp(1.2rem, 1vw + 1rem, 1.6rem);
+      margin-bottom: 1.5rem;
+      color: #003a70;
+    }
+    .toggle-container {
+      position: relative;
+      max-width: 700px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      transition: opacity 0.6s ease-in-out;
+    }
+    .toggle-button {
+      margin-top: 1rem;
+      background-color: #003a70;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .toggle-button:hover {
+      background-color: #005bb5;
+    }
+    .tagline {
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #333;
+      text-align: center;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Converting Mariner Sands PDF Docs to Responsive</h2>
+
+  <div class="toggle-container">
+    <div id="viewer">
+      <img src="ARBOrig.png" alt="Original ARB PDF" style="width:100%; border-radius:10px;" />
+    </div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleView()">Show Responsive Version</button>
+
+  <p class="tagline">AI converted this PDF to HTML in less than one minute — no HTML editor required.</p>
+
+  <script>
+    let showingOriginal = true;
+    function toggleView() {
+      const viewer = document.getElementById('viewer');
+      const button = document.querySelector('.toggle-button');
+      if (showingOriginal) {
+        // Show the responsive HTML inside an iframe
+        viewer.innerHTML = '<iframe src="ARB_Conversion.html" title="Responsive ARB HTML Version" style="width:100%; height:70vh; border:1px solid #ccc; border-radius:10px;"></iframe>';
+        button.textContent = 'Show Original PDF';
+      } else {
+        // Show the original PDF screenshot image
+        viewer.innerHTML = '<img src="ARBOrig.png" alt="Original ARB PDF" style="width:100%; border-radius:10px;" />';
+        button.textContent = 'Show Responsive Version';
+      }
+      showingOriginal = !showingOriginal;
+    }
+  </script>
+</body>
+</html>

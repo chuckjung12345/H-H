@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card — MS Best of the Best (v3)</title>
+<style>
+  :root{
+    --maxw: 1200px;          /* 👈 container max width for 4-up desktop layout */
+    --gap: 16px;
+  }
+  body {font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.5;}
+  .wrap {max-width: var(--maxw); margin: 0 auto; padding: 0 16px;}
+  h1, h2 {text-align: center; margin: 1.25em 0 0.5em;}
+  .section {padding: 0.5em 0 1.25em;}
+
+  /* Large screens: fixed 4-up grid per row */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--gap);
+    justify-items: center;
+  }
+  figure {
+    position: relative;
+    width: 100%;            /* fill the grid cell */
+    max-width: 354px;       /* don't exceed native phone width */
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 354 / 667;  /* preserve phone screenshot ratio */
+  }
+  figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 0.3em;
+  }
+
+  /* Medium screens: 2-up or 3-up as space allows */
+  @media (max-width: 1200px) {
+    .wrap {max-width: 1000px;}
+    .gallery { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  }
+
+  /* Mobile: swipe carousel with overlay captions */
+  @media (max-width: 700px) {
+    .wrap {max-width: 100%; padding: 0 8px;}
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0.5em;
+      padding-bottom: 1em;
+    }
+    figure {
+      flex: 0 0 85%;
+      max-width: none;
+      scroll-snap-align: center;
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 0.45em 0.35em;
+      font-size: 0.85em;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Best of the Best — Mariner Sands Communications</h1>
+    <div class="section" id="best">
+      <div class="gallery">
+        <figure>
+          <img src="Events.png" alt="Best Example 1">
+          <figcaption>Upcoming Events</figcaption>
+        </figure>
+        <figure>
+          <img src="Dining.png" alt="Best Example 2">
+          <figcaption>Twilight & Weekly Dining</figcaption>
+        </figure>
+        <figure>
+          <img src="Golf.png" alt="Best Example 3">
+          <figcaption>Tee Time</figcaption>
+        </figure>
+        <figure>
+          <img src="Tennis.png" alt="Best Example 4">
+          <figcaption>Court & Fitness -- All Around Best (45 cpl)</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h1>Not the Best of the Best — Room for Improvement</h1>
+    <div class="section" id="notbest">
+      <div class="gallery">
+        <figure>
+          <img src="H&H.png" alt="Not Best Example 1">
+          <figcaption>Highlights & Happenings — Flipbook Format</figcaption>
+        </figure>
+        <figure>
+          <img src="MS6.png" alt="Not Best Example 2">
+          <figcaption>Club Dress Rules in H&H</figcaption>
+        </figure>
+        <figure>
+          <img src="MS7.png" alt="Not Best Example 3">
+          <figcaption>Menus Linked from Email</figcaption>
+        </figure>
+        <figure>
+          <img src="ARB.png" alt="Not Best Example 4">
+          <figcaption>Letters Linked from Email</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

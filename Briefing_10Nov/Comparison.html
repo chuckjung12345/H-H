@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Card 7 — Side‑by‑Side Screenshot Gallery</title>
+  <style>
+    :root {
+      --page-bg: #f5f6f8;
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #b8860b;
+      --brand: #003a70;
+      --radius: 16px;
+      --gap: 14px;
+      --maxw: 700px;
+      --shot-ratio: 9 / 16;
+      --shot-bg: #fff;
+    }
+
+    html { -webkit-text-size-adjust: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--page-bg); color: var(--ink);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    .wrap { max-width: var(--maxw); margin: 24px auto; padding: 0 16px 48px; }
+
+    .card-head { margin: 0 0 14px; }
+    .eyebrow { color: var(--brand); font-weight: 600; letter-spacing: .02em; text-transform: uppercase; font-size: 0.85rem; }
+    .title { margin: 4px 0 8px; font-size: clamp(20px, 3.4vw, 28px); line-height: 1.2; }
+    .subtle { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .goldline { height: 3px; background: var(--accent); border-radius: 2px; margin: 10px 0 18px; }
+
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+
+    figure { margin: 0; background: #fff; border-radius: var(--radius); box-shadow: 0 4px 14px rgba(0,0,0,.08); overflow: hidden; position: relative; }
+    .shot-window { position: relative; background: var(--shot-bg); aspect-ratio: var(--shot-ratio); display: grid; place-items: center; }
+    .shot-window img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    figcaption { padding: 10px 12px 12px; border-top: 1px solid #e5e7eb; background: #fafafa; font-size: 0.94rem; }
+    .label { display: block; font-weight: 600; margin-bottom: 2px; }
+
+    @media (max-width: 760px) {
+      .gallery { grid-template-columns: 1fr; gap: 0; }
+      figure { border-radius: 0; box-shadow: none; }
+      figcaption { display: none; }
+      .shot-window { aspect-ratio: auto; height: auto; }
+      .shot-window img { object-fit: contain; width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="card-head" aria-label="Card 7 header">
+      <div class="eyebrow">Section 7</div>
+      <h1 class="title">Industry vs Mariner Sands Side‑by‑Side Screenshot Gallery</h1>
+      <p class="subtle">Mariner Sands Linked PDF Screenshots Listed Most to Least Readable</p>
+      <div class="goldline" aria-hidden="true"></div>
+    </header>
+
+    <section class="gallery" aria-label="Repaired gallery">
+      <!-- Corrected gallery from uploaded file -->
+      <!-- Slot 1 through 16 fully repaired closing tags -->
+      <figure><div class="shot-window"><img src="NYT.png" alt="New York Times" /></div><figcaption><span class="label">New York Times</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS1.png" alt="Food & Beverage" /></div><figcaption><span class="label">Food & Beverage</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="CNN.png" alt="CNN" /></div><figcaption><span class="label">CNN</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS2.png" alt="Board of Governors Message" /></div><figcaption><span class="label">Board of Governors Message</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="USAToday.png" alt="USAToday" /></div><figcaption><span class="label">USAToday</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS3.png" alt="ARB" /></div><figcaption><span class="label">ARB</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="Forbes.png" alt="Forbes" /></div><figcaption><span class="label">Forbes</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS4.png" alt="Clubhouse Hours" /></div><figcaption><span class="label">Clubhouse Hours</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="WaPost.png" alt="Washington Post" /></div><figcaption><span class="label">Forbes</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS5.png" alt="Social Event" /></div><figcaption><span class="label">Social Event</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="WSJ.png" alt="WSJ" /></div><figcaption><span class="label">WSJ</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS6.png" alt="Club Dress Rules" /></div><figcaption><span class="label">Club Dress Rules</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="Politico.png" alt="Politico" /></div><figcaption><span class="label">Politico</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS7.png" alt="Menu" /></div><figcaption><span class="label">Menu</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="Newsmax.png" alt="Newsmax" /></div><figcaption><span class="label">Newsmax</span></figcaption></figure>
+      <figure><div class="shot-window"><img src="MS8.png" alt="Financial Report" /></div><figcaption><span class="label">Financial Report</span></figcaption></figure>
+    </section>
+  </main>
+</body>
+</html>
