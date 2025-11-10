@@ -3,101 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariner Sands Responsive Design Demonstrations</title>
+  <title>Mariner Sands — Responsive Design Demonstration Hub</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #000;
-      margin: 0;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    :root{
+      --brand:#003a70;
+      --gold:#d4af37;
+      --ink:#000;
+      --bg:#f5f6f8;
+      --card:#fff;
+      --maxw:680px; /* locked column width */
     }
-    h1 {
-      text-align: center;
-      font-size: clamp(1.6rem, 1.3vw + 1.2rem, 2.2rem);
-      color: #003a70;
-      margin-bottom: 2rem;
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.55;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:24px 16px 56px;
     }
-    .section {
-      max-width: 900px;
-      width: 100%;
-      margin-bottom: 2rem;
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 4px 16px rgba(0,0,0,.08);
+      padding:20px 22px 28px;
     }
-    h2 {
-      color: #003a70;
-      border-bottom: 2px solid #d4af37;
-      padding-bottom: 0.4rem;
-      margin-bottom: 1rem;
+    header{
+      text-align:center;
+      margin-bottom:18px;
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
+    h1{
+      margin:0 0 6px;
+      font-size:clamp(22px,2.6vw,28px);
+      color:var(--brand);
+      line-height:1.2;
     }
-    li {
-      margin-bottom: 0.6rem;
+    .goldline{
+      height:3px;background:var(--gold);border-radius:2px;margin:10px auto 4px;max-width:220px;
     }
-    a {
-      text-decoration: none;
-      color: #005bb5;
-      font-weight: bold;
+    .intro{
+      margin:8px auto 0;
+      max-width:58ch;
+      color:#333;
+      font-size:0.98rem;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .section{
+      margin:18px 0 22px;
     }
+    /* Replace your current h2, ul, li, a rules with these */
+h2{
+  margin:0 0 4px;           /* tighter to separate from links */
+  font-size:1.05rem;
+  color:#000;               /* titles now black */
+  border-bottom:2px solid #d4af37;
+  padding-bottom:6px;
+  font-weight:700;
+}
+ul{list-style:none;margin:10px 0 0; padding:0;}  /* a bit more space after title */
+li{margin:6px 0}
+a{
+  color:#005bb5;            /* classic link blue */
+  text-decoration:none;
+  font-weight:bold;
+}
+a:hover{text-decoration:underline}
+
+    .blurb{margin:4px 0 0;color:#333;font-size:0.95rem}
+    .muted{opacity:.7}
+    footer{margin-top:10px;text-align:center;font-size:.9rem;color:#555}
   </style>
 </head>
 <body>
-  <h1>Mariner Sands — Responsive Design Demonstration Hub</h1>
+  <main class="wrap">
+    <header>
+      <h1>Mariner Sands — Responsive Design Demonstration Hub</h1>
+      <div class="goldline" aria-hidden="true"></div>
+      <p class="intro">A concise, phone-first tour: principle → evidence → context → proof → transition → application → action.</p>
+    </header>
 
-  <div class="section">
-    <h2>1. MS Email and Linked Article Examples</h2>
-    <ul>
-      <li><a href="MS_Best_vs_NotBest.html" target="_blank">Four Best MS Emails and Worst Linked Articles</a></li>
-    </ul>
-  </div>
+    <!-- 1 -->
+    <section class="section">
+      <h2>1) WCAG Readability Guidelines</h2>
+      <ul>
+        <li><a href="WCAG.html" target="_blank">Open WCAG.html</a></li>
+      </ul>
+      <p class="blurb">Starts with principle. Establishes the why: accessibility, readability, and the CPL foundation.</p>
+    </section>
 
-  <div class="section">
-    <h2>2. Online Publishing Standards</h2>
-    <ul>
-      <li><a href="Online_Standards.html" target="_blank">National Newspapers & Local Restaurants — Responsive Design Demonstration</a></li>
-    </ul>
-  </div>
+    <!-- 2 -->
+    <section class="section">
+      <h2>2) MS Best vs Not Best Examples</h2>
+      <ul>
+        <li><a href="MS_Best_vs_NotBest.html" target="_blank">Open MS_Best_vs_NotBest.html</a></li>
+      </ul>
+      <p class="blurb">Immediately grounds it in Mariner Sands reality — the “what’s happening here” evidence.</p>
+    </section>
 
-  <div class="section">
-    <h2>3. Industry vs MS Linked Articles</h2>
-    <ul>
-      <li><a href="Comparison.html" target="_blank">Industry Online Articles vs MS Linked Articles (Flipbook/PDF Limitations)</a></li>
-    </ul>
-  </div>
+    <!-- 3 -->
+    <section class="section">
+      <h2>3) Online Publishing Standards</h2>
+      <ul>
+        <li><a href="Online_Standards.html" target="_blank">Open Online_Standards.html</a></li>
+      </ul>
+      <p class="blurb">Broadens context: how the outside world (press, restaurants) already meets the standard.</p>
+    </section>
 
-  <div class="section">
-    <h2>4. Flipbook vs Responsive H&H</h2>
-    <ul>
-      <li><a href="https://heyzine.com/flip-book/9f8f67ba84.html" target="_blank">Heyzine Flipbook Extract — 6 Oct H&H</a></li>
-      <li><a href="https://chuckjung12345.github.io/H-H/Responsive_Demo_Files/index.html" target="_blank">GitHub Responsive Version — 6 Oct H&H</a></li>
-    </ul>
-  </div>
+    <!-- 4 -->
+    <section class="section">
+      <h2>4) Industry vs MS Linked Articles (Proof Layer)</h2>
+      <ul>
+        <li><a href="Comparison.html" target="_blank">Open Comparison.html</a></li>
+      </ul>
+      <p class="blurb">Side-by-side validation of MS vs industry compliance.</p>
+    </section>
 
-  <div class="section">
-    <h2>5. Responsive Article Samples</h2>
-    <ul>
-      <li><a href="MenuMaster.html" target="_blank">Reserve Menu (Responsive)</a></li>
-      <li><a href="Responsive_Finance.html" target="_blank">MS Financial Report (Responsive)</a></li>
-      <li><a href="LetterConversion.html" target="_blank">Letter Conversion — PDF → HTML Toggle</a></li>
-    </ul>
-  </div>
+    <!-- 5 NEW: Flipbook vs Responsive (6 Oct H&H) -->
+   <!-- 5 NEW: Flipbook vs Responsive (6 Oct H&H) -->
+<section class="section">
+  <h2>5) Flipbook vs Responsive — 6 Oct H&amp;H</h2>
+  <ul>
+    <li><a href="https://heyzine.com/flip-book/5dbe7e87a3.html" target="_blank">
+      Heyzine Flipbook — 6 Oct H&amp;H
+    </a></li>
+    <li><a href="https://chuckjung12345.github.io/H-H/Responsive_Demo_Files/index.html" target="_blank">
+      Responsive Version — 6 Oct H&amp;H
+    </a></li>
+  </ul>
+  <p class="blurb">Direct A/B of the same content: fixed-layout flipbook vs responsive HTML.</p>
+</section>
 
-  <div class="section">
-    <h2>6. References & Supporting Data</h2>
-    <ul>
-      <li><span style="opacity:0.7;">WCAG Readability Guidelines — To Be Added</span></li>
-      <li><span style="opacity:0.7;">Additional Key Points — To Be Added</span></li>
-    </ul>
-  </div>
+    <!-- 6 Communications Review (week of 26 Oct 2025) -->
+    <section class="section">
+      <h2>6) Mariner Sands Online Communications Review — Week of 26 Oct 2025</h2>
+      <ul>
+        <!-- TODO: replace '#' with the final review URL when ready -->
+        <li><a href="#" target="_blank">Open Communications Review (26 Oct)</a></li>
+      </ul>
+      <p class="blurb">Periodic review snapshot to inform the transition roadmap.</p>
+    </section>
 
-  <p style="font-weight:bold; color:#333; text-align:center;">All demonstrations are mobile-friendly. Open on phone, tablet, or desktop to experience responsive design in action.</p>
+    <!-- 7 -->
+    <section class="section">
+      <h2>7) Why PDF / Flipbook Persists</h2>
+      <ul>
+        <li><a href="Why_PDF-Flipbook_Persists.html" target="_blank">Open Why_PDF-Flipbook_Persists.html</a></li>
+      </ul>
+      <p class="blurb">Causal analysis — why we got here despite evidence.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="section">
+      <h2>8) Responsive Finance Example</h2>
+      <ul>
+        <li><a href="Responsive_Finance.html" target="_blank">Open Responsive_Finance.html</a></li>
+      </ul>
+      <p class="blurb">Transition to positive demonstration — shows responsive design in an MS-appropriate domain.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="section">
+      <h2>9) MenuMaster Demo</h2>
+      <ul>
+        <li><a href="MenuMaster.html" target="_blank">Open MenuMaster.html</a></li>
+      </ul>
+      <p class="blurb">Practical case study: something instantly relatable to members (menus).</p>
+    </section>
+
+    <!-- 10 Utility -->
+    <section class="section">
+      <h2>10) Letter Conversion (Utility)</h2>
+      <ul>
+        <li><a href="LetterConversion.html" target="_blank">Open LetterConversion.html</a></li>
+      </ul>
+      <p class="blurb">Back-end example or internal mechanism; optional during the briefing.</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="section">
+      <h2>11) BOG Recommendations</h2>
+      <ul>
+        <li><a href="BOGRecommendations.html" target="_blank">Open BOGRecommendations.html</a></li>
+      </ul>
+      <p class="blurb">The action piece — culminates the argument with what the Board should do.</p>
+    </section>
+
+    <!-- 12 -->
+    <section class="section">
+      <h2>12) AI in the Transition to Responsive Design</h2>
+      <ul>
+        <li><a href="AI_Help_Card.html" target="_blank">Open AI_Help_Card.html</a></li>
+      </ul>
+      <p class="blurb">Closing note — forward-looking, shows that AI can facilitate the transition and reduce effort.</p>
+    </section>
+
+    <footer>All demonstrations are mobile-friendly. Open on phone, tablet, or desktop.</footer>
+  </main>
 </body>
 </html>
