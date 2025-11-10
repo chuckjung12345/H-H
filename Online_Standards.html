@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card — See the Online Standards in Action</title>
+<style>
+  /* === Scoped styling: prefix all with .std-card to avoid conflicts === */
+  .std-card {max-width: 1050px; margin: 0 auto; padding: 1.5em 1em; text-align: center;}
+  .std-card h1 {margin-bottom: 1em; font-size: 1.6em;}
+  .std-card h2 {margin: 1.5em 0 0.75em; font-size: 1.3em; color: #003a70;}
+
+  .std-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    justify-items: center;
+  }
+  .std-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #003a70;
+    border: 2px solid #003a70;
+    border-radius: 10px;
+    padding: 1.25em 0.5em;
+    min-height: 80px;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: white;
+  }
+  .std-box:hover, .std-box:focus {
+    color: #b89100;
+    border-color: #b89100;
+    box-shadow: 0 0 10px rgba(184,145,0,0.3);
+  }
+
+  @media (max-width: 700px) {
+    .std-card {padding: 1em 0.5em;}
+    .std-row {grid-template-columns: 1fr;}
+  }
+</style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="header" style="max-width:680px;margin:0 auto 1rem;"><a href="LandingPage.html" style="text-decoration:none;border:1px solid #e2e2e2;padding:.5rem .7rem;border-radius:999px;font-size:14px;">← Return to Landing Page</a></nav>
+
+  <div class="std-card">
+    <h1>See the Online Standards in Action</h1>
+
+    <h2>Digital News Publishers</h2>
+    <div class="std-row">
+      <a class="std-box" href="https://www.nytimes.com" target="_blank" rel="noopener">The New York Times</a>
+      <a class="std-box" href="https://www.cnn.com" target="_blank" rel="noopener">CNN</a>
+      <a class="std-box" href="https://www.foxnews.com" target="_blank" rel="noopener">Fox News</a>
+    </div>
+
+    <h2>Local Restaurant Websites</h2>
+    <div class="std-row">
+      <a class="std-box" href="https://divebarrestaurant.com" target="_blank" rel="noopener">Dive Bar</a>
+      <a class="std-box" href="https://www.oakandembersteakhouse.com/dinner-menu/" target="_blank" rel="noopener">Oak &amp; Ember</a>
+      <a class="std-box" href="https://the-woods-jupiter.res-menu.com/menu" target="_blank" rel="noopener">The Woods</a>
+    </div>
+  </div>
+
+  <div style="max-width:680px;margin:2rem auto 0;display:flex;justify-content:flex-start;"><a href="LandingPage.html" style="display:inline-block;text-decoration:none;border:1px solid #e2e2e2;padding:.6rem 1rem;border-radius:999px;font-size:16px;">← Return to Landing Page</a></div>
+</body>
+</html>
